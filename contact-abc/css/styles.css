@@ -6,3 +6,200 @@ body {
 .container {
     padding: 0 1rem;
 }
+
+body {
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 97.5rem;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: .5rem;
+    padding: 2rem;
+}
+
+
+header {
+    margin-bottom: 2rem;
+}
+
+.inner-header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+header h2 {
+    position: relative;
+    display: inline-block;
+    padding-left: 1rem;
+    padding-bottom: .375rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+header h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: .3125rem;
+    height: 100%;
+    background: #CB4E0B;
+}
+
+header h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .1875rem;
+    background: #CB4E0B;
+}
+
+header img {
+    width: 100%;
+    border-radius: .5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+form input,
+form textarea {
+    padding: 0.875rem 1rem;
+    border: .0625rem solid #C1C4C8;
+    border-radius: .5rem;
+    width: 100%;
+}
+
+form textarea {
+    min-height: 12.5rem;
+}
+
+
+fieldset {
+    border: none;
+}
+
+fieldset > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 3.625rem;
+    width: 100%;
+
+    border: .0625rem solid #C1C4C8;
+    border-radius: .5rem;
+
+    position: relative;
+    cursor: pointer;
+
+    padding: 0 2.5rem 0 1rem;
+    box-sizing: border-box;
+}
+
+fieldset input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+fieldset label span {
+    width: 100%;
+    text-align: center;
+}
+
+fieldset label::after {
+    content: '';
+    position: absolute;
+    right: .75rem;
+    width: 1rem;
+    height: 1rem;
+    border: .0625rem solid #C1C4C8;
+    border-radius: 50%;
+}
+
+fieldset label:hover {
+    border-color: #CB4E0B;
+}
+
+fieldset label:has(input:checked) {
+    background: #CB4E0B;
+    border-color: #CB4E0B;
+    color: #fff;
+}
+
+
+form input[type="submit"] {
+    padding: 1rem;
+    background: #CB4E0B;
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+}
+
+@media (min-width: 37.5rem) {
+    fieldset > div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    fieldset > div label:nth-of-type(4) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 56.25rem) {
+
+    .container {
+        display: flex;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+
+    header {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    form {
+        flex: 1.5;
+    }
+
+    .inner-header-container {
+        flex-direction: column;
+    }
+
+    fieldset > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    fieldset > div label:nth-of-type(4) {
+        grid-column: auto;
+    }
+}
+
+@media (min-width: 75rem) {
+    fieldset > div {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
